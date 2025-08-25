@@ -45,10 +45,10 @@ const Hero: React.FC = () => {
             </button>
             
             <button
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-900 transform hover:scale-105 transition-all duration-200"
             >
-              Our Services
+              Our Solutions
             </button>
           </div>
         </div>

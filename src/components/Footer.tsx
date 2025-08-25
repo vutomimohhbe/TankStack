@@ -89,12 +89,12 @@ const Footer: React.FC = () => {
                 <button
                   onClick={() =>
                     document
-                      .getElementById("services")
+                      .getElementById("solutions")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-left"
                 >
-                  Services
+                  Solutions
                 </button>
               </li>
               <li>
@@ -114,22 +114,22 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-lg font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <span className="text-gray-400">IT Consulting</span>
+                <span className="text-gray-400">Website Development</span>
               </li>
               <li>
-                <span className="text-gray-400">System Integration</span>
+                <span className="text-gray-400">Security & Vulnerability</span>
               </li>
               <li>
-                <span className="text-gray-400">Cloud Solutions</span>
+                <span className="text-gray-400">Support & Bug Fixes</span>
               </li>
               <li>
-                <span className="text-gray-400">Cybersecurity</span>
+                <span className="text-gray-400">Performance Optimization</span>
               </li>
               <li>
-                <span className="text-gray-400">AI & Automation</span>
+                <span className="text-gray-400">SEO & Analytics</span>
               </li>
             </ul>
           </div>

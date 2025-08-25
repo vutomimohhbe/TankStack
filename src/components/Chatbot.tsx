@@ -35,35 +35,35 @@ const Chatbot: React.FC = () => {
       message.includes("hi") ||
       message.includes("hey")
     ) {
-      return "Hello! Welcome to TankStack. I'm here to help you learn about our technology solutions. What would you like to know?";
+      return "Hello! Welcome to TankStack. I'm here to help you learn about our solutions. What would you like to know?";
     }
 
-    if (message.includes("service") || message.includes("what do you do")) {
-      return "We offer 5 main services: IT Consulting & Tech Support, Software & Systems Integration, Cloud & Data Solutions, Cybersecurity & Risk Management, and AI & Automation Consulting. Which one interests you most?";
+    if (message.includes("solution") || message.includes("service") || message.includes("what do you do")) {
+      return "We offer 6 main solutions: Website Design & Development, Site Security & Vulnerability Check, Ongoing Support & Bug Fixes, Performance Optimisation, SEO & Analytics Setup, and Tech Stack Advice & Integrations. Which one interests you most?";
     }
 
-    if (message.includes("it consulting") || message.includes("tech support")) {
-      return "Our IT Consulting & Tech Support includes 24/7 technical support, system maintenance, infrastructure planning, and performance optimization. We keep your systems running smoothly so you can focus on your business.";
+    if (message.includes("website") || message.includes("development") || message.includes("design")) {
+      return "Our Website Design & Development creates beautiful, fast sites with modern stacks. We build landing pages, blogs, and small e-commerce sites that are SEO-friendly, mobile-first, and deployed with CI/CD for reliability.";
     }
 
-    if (message.includes("integration") || message.includes("software")) {
-      return "Our Software & Systems Integration service helps connect your tools and platforms. We provide API development, data synchronization, workflow automation, and legacy system integration to eliminate data silos.";
+    if (message.includes("security") || message.includes("vulnerability")) {
+      return "Our Site Security & Vulnerability Check scans, hardens, and patches to keep your site safe. We do OWASP-style checks, review TLS/headers/auth, and create backup/restore & update strategies.";
     }
 
-    if (message.includes("cloud") || message.includes("data")) {
-      return "Our Cloud & Data Solutions include cloud migration, data analytics, backup & recovery, and cost optimization. We help you leverage scalable infrastructure that grows with your business.";
+    if (message.includes("support") || message.includes("bug") || message.includes("fix")) {
+      return "Our Ongoing Support & Bug Fixes provide on-demand troubleshooting for errors, broken pages, and weird bugs. We offer emergency fixes with 24-72h turnarounds, resolve plugin/theme conflicts, and sort email/SSL/domain issues.";
     }
 
-    if (message.includes("security") || message.includes("cyber")) {
-      return "Our Cybersecurity & Risk Management services protect your business with security audits, threat detection, compliance management, and employee training. We keep your digital assets safe.";
+    if (message.includes("performance") || message.includes("speed") || message.includes("optimization")) {
+      return "Our Performance Optimisation makes your site faster for better conversions. We improve Core Web Vitals, optimize images & assets, and set up caching & CDN for speed wins.";
     }
 
-    if (
-      message.includes("ai") ||
-      message.includes("automation") ||
-      message.includes("artificial intelligence")
-    ) {
-      return "Our AI & Automation Consulting helps streamline operations through process automation, chatbot development, AI strategy, and machine learning solutions. Let technology work for you!";
+    if (message.includes("seo") || message.includes("analytics") || message.includes("tracking")) {
+      return "Our SEO & Analytics Setup makes you discoverable and shows what's working. We handle on-page basics & sitemaps, set up Google Analytics & Search Console, and create event tracking & dashboards.";
+    }
+
+    if (message.includes("tech stack") || message.includes("integration") || message.includes("advice")) {
+      return "Our Tech Stack Advice & Integrations help you choose the right tools and connect them cleanly. We advise on CMS, hosting, and database choices, handle payment/email/chat integrations, and manage migrations without downtime.";
     }
 
     if (message.includes("team") || message.includes("who are you")) {
@@ -75,7 +75,7 @@ const Chatbot: React.FC = () => {
       message.includes("reach") ||
       message.includes("talk")
     ) {
-      return "You can reach us through our contact form below, email us at tankstackinfo@gmail.com, or call us at (078 349-TANK. We'd love to discuss how we can help your business!";
+      return "You can reach us through our contact form below, email us at tankstackinfo@gmail.com, WhatsApp us at +27 78 349 8265, or call us at (078) 349-TANK. We'd love to discuss how we can help your business!";
     }
 
     if (
@@ -83,18 +83,18 @@ const Chatbot: React.FC = () => {
       message.includes("cost") ||
       message.includes("pricing")
     ) {
-      return "Our pricing varies based on your specific needs and project scope. We offer customized solutions to fit your budget. Contact us for a free consultation and personalized quote!";
+      return "We offer clear, upfront pricing! Quick Fix: once-off from R500. Care Plan: monthly from R1,200 (includes updates, backups, monitoring). Contact us for a free audit and personalized quote!";
     }
 
     if (message.includes("thank") || message.includes("thanks")) {
-      return "You're very welcome! Is there anything else you'd like to know about TankStank's services? I'm here to help!";
+      return "You're very welcome! Is there anything else you'd like to know about TankStack's solutions? I'm here to help!";
     }
 
     if (message.includes("bye") || message.includes("goodbye")) {
       return "Thanks for chatting with me! Feel free to reach out anytime if you have more questions. Have a great day!";
     }
 
-    return "I'd be happy to help you with that! You can ask me about our services (IT consulting, software integration, cloud solutions, cybersecurity, or AI automation), our team, pricing, or how to contact us. What would you like to know more about?";
+    return "I'd be happy to help you with that! You can ask me about our solutions (website development, security checks, support & bug fixes, performance optimization, SEO & analytics, or tech stack advice), our team, pricing, or how to contact us. What would you like to know more about?";
   };
 
   const handleSendMessage = async () => {
