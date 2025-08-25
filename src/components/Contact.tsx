@@ -229,8 +229,8 @@ const Contact: React.FC = () => {
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">
                       Call Us
                     </h4>
-                    <p className="text-gray-600">(555) 123-TANK</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
+                    <p className="text-gray-600">(078) 349-TANK</p>
+                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM </p>
                   </div>
                 </div>
 
@@ -258,12 +258,12 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                      Office
+                      Location
                     </h4>
                     <p className="text-gray-600">
-                      123 Innovation Drive
+                      Gauteng Province
                       <br />
-                      Tech City, TC 12345
+                      Johannesburg, 2031
                     </p>
                     <p className="text-sm text-gray-500">By appointment only</p>
                   </div>
