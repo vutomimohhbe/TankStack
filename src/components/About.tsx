@@ -15,7 +15,7 @@ const About: React.FC = () => {
     {
       name: "Vutomi Mohube",
       image:
-        "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+        Vutomi_Pic.jpg,
     },
     {
       name: "Cameron",
