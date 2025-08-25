@@ -1,5 +1,6 @@
 import React from "react";
 import AthiPic from "../assets/AthiPic.jpg";
+import Vutomi_Pic from "../assets/Vutomi_Pic.jpg";
 
 const About: React.FC = () => {
   const teamMembers = [
@@ -15,7 +16,7 @@ const About: React.FC = () => {
     {
       name: "Vutomi Mohube",
       image:
-        Vutomi_Pic.jpg,
+        Vutomi_Pic,
     },
     {
       name: "Cameron",
