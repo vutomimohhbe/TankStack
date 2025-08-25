@@ -7,13 +7,14 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
 import "./App.css";
+import Portfolio from "./components/Portfolio";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "solutions", "contact"];
+      const sections = ["home", "about", "portfolio", "solutions", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -41,6 +42,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Portfolio />
         <SolutionsSection />
         <Contact />
       </main>

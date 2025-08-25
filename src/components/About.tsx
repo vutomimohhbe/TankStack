@@ -2,6 +2,7 @@ import React from "react";
 import VutomiPortfolio from "./VutomiPortfolio";
 import AthiPic from "../assets/AthiPic.jpg";
 import Vutomi_Pic from "../assets/Vutomi_Pic.jpg";
+import HloniPic from "../assets/HloniPic.jpg";
 
 const About: React.FC = () => {
   const [showVutomiPortfolio, setShowVutomiPortfolio] = React.useState(false);
@@ -13,31 +14,29 @@ const About: React.FC = () => {
   const teamMembers = [
     {
       name: "Athi Mngqundaniso",
-      title: "Associate Solutions Architect",
+      title: "Team Member",
       image: AthiPic,
       onClick: null,
     },
     {
       name: "Hloni Letsatsi",
       title: "Team Member",
-      image:
-        "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      image: HloniPic,
       onClick: null,
     },
     {
       name: "Vutomi Mohube",
-      title: "Software Engineer",
-      image:
-        Vutomi_Pic,
+      title: "Team Member",
+      image: Vutomi_Pic,
       onClick: () => setShowVutomiPortfolio(true),
     },
-    {
-      name: "Cameron",
-      title: "Team Member",
-      image:
-        "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      onClick: null,
-    },
+    // {
+    //   name: "Cameron",
+    //   title: "Team Member",
+    //   image:
+    //     "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    //   onClick: null,
+    // },
   ];
 
   return (
@@ -160,7 +159,7 @@ const About: React.FC = () => {
             <div
               key={index}
               className={`bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:transform hover:-translate-y-1 text-center ${
-                member.onClick ? 'cursor-pointer' : ''
+                member.onClick ? "cursor-pointer" : ""
               }`}
               onClick={member.onClick || undefined}
             >
@@ -174,9 +173,13 @@ const About: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-1">
                 {member.name}
               </h3>
-              <p className="text-sm text-blue-600 font-medium">{member.title}</p>
+              <p className="text-sm text-blue-600 font-medium">
+                {member.title}
+              </p>
               {member.onClick && (
-                <p className="text-xs text-gray-500 mt-2">Click to view portfolio</p>
+                <p className="text-xs text-gray-500 mt-2">
+                  Click to view portfolio
+                </p>
               )}
             </div>
           ))}

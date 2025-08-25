@@ -1,5 +1,5 @@
-import React from 'react';
-import { Wrench, ShieldCheck, Bug, Gauge, Search, Puzzle } from 'lucide-react';
+import React from "react";
+import { Wrench, ShieldCheck, Bug, Gauge, Search, Puzzle } from "lucide-react";
 
 interface SolutionsSectionProps {
   company?: {
@@ -17,22 +17,24 @@ interface SolutionsSectionProps {
 
 const SolutionsSection: React.FC<SolutionsSectionProps> = ({
   company = {
-    name: 'TankStack',
-    whatsapp: '+27 78 349 8265',
-    email: 'tankstackinfo@gmail.com'
+    name: "TankStack",
+    whatsapp: "+27 78 349 ",
+    email: "tankstackinfo@gmail.com",
   },
   pricing = {
-    quickFix: '500',
-    carePlan: '1,200'
+    quickFix: "500",
+    carePlan: "1,200",
   },
   onQuickFix,
-  onRequestAudit
+  onRequestAudit,
 }) => {
   const handleQuickFix = () => {
     if (onQuickFix) {
       onQuickFix();
     } else {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      document
+        .getElementById("contact")
+        ?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -40,7 +42,9 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
     if (onRequestAudit) {
       onRequestAudit();
     } else {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      document
+        .getElementById("contact")
+        ?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -48,13 +52,14 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
     {
       icon: <Wrench className="w-6 h-6" />,
       title: "Website Design & Development",
-      blurb: "Beautiful, fast sites built with modern stacks and best practices.",
+      blurb:
+        "Beautiful, fast sites built with modern stacks and best practices.",
       bullets: [
         "Landing pages, blogs, and small e-commerce",
         "SEO-friendly, mobile-first",
-        "Deployed with CI/CD for reliability"
+        "Deployed with CI/CD for reliability",
       ],
-      cta: "Start a build"
+      cta: "Start a build",
     },
     {
       icon: <ShieldCheck className="w-6 h-6" />,
@@ -63,32 +68,34 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
       bullets: [
         "OWASP-style checks & simple reports",
         "TLS, headers, auth & roles review",
-        "Backup/restore & update strategy"
+        "Backup/restore & update strategy",
       ],
-      cta: "Run a security check"
+      cta: "Run a security check",
     },
     {
       icon: <Bug className="w-6 h-6" />,
       title: "Ongoing Support & Bug Fixes",
-      blurb: "On-demand troubleshooting for errors, broken pages, and weird bugs.",
+      blurb:
+        "On-demand troubleshooting for errors, broken pages, and weird bugs.",
       bullets: [
         "Emergency fixes & quick turnarounds",
         "Plugin/theme conflicts resolved",
-        "Email/SSL/domain issues sorted"
+        "Email/SSL/domain issues sorted",
       ],
       cta: "Fix this now",
-      badge: "24–72h turnaround"
+      badge: "24–72h turnaround",
     },
     {
       icon: <Gauge className="w-6 h-6" />,
       title: "Performance Optimisation",
-      blurb: "Speed wins. We tune your site for fast loads and better conversions.",
+      blurb:
+        "Speed wins. We tune your site for fast loads and better conversions.",
       bullets: [
         "Core Web Vitals improvements",
         "Image & asset optimisation",
-        "Caching & CDN setup"
+        "Caching & CDN setup",
       ],
-      cta: "Make it faster"
+      cta: "Make it faster",
     },
     {
       icon: <Search className="w-6 h-6" />,
@@ -97,9 +104,9 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
       bullets: [
         "On-page basics & sitemap",
         "Google Analytics & Search Console",
-        "Event tracking & dashboards"
+        "Event tracking & dashboards",
       ],
-      cta: "Set up tracking"
+      cta: "Set up tracking",
     },
     {
       icon: <Puzzle className="w-6 h-6" />,
@@ -108,17 +115,17 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
       bullets: [
         "CMS, hosting, and database choices",
         "Payment, email, chat integrations",
-        "Migrations without downtime"
+        "Migrations without downtime",
       ],
-      cta: "Get advice"
-    }
+      cta: "Get advice",
+    },
   ];
 
   const trustChips = [
     "Freelance & flexible",
     "Clear, upfront pricing",
     "Remote or on-site",
-    "No long contracts"
+    "No long contracts",
   ];
 
   return (
@@ -133,14 +140,15 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
             Solutions we provide
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A flexible, freelance team that jumps in to build, secure, and fix your tech — fast.
+            A flexible, freelance team that jumps in to build, secure, and fix
+            your tech — fast.
           </p>
         </div>
 
         {/* Grid of 6 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {solutions.map((solution, index) => (
-            <div 
+            <div
               key={index}
               className="group p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative"
             >
@@ -149,7 +157,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                   {solution.badge}
                 </div>
               )}
-              
+
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform duration-300">
                   {solution.icon}
@@ -158,16 +166,27 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                   {solution.title}
                 </h3>
               </div>
-              
+
               <p className="text-gray-600 mb-4 leading-relaxed">
                 {solution.blurb}
               </p>
 
               <ul className="space-y-2 mb-6">
                 {solution.bullets.map((bullet, bulletIndex) => (
-                  <li key={bulletIndex} className="flex items-start text-sm text-gray-700">
-                    <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <li
+                    key={bulletIndex}
+                    className="flex items-start text-sm text-gray-700"
+                  >
+                    <svg
+                      className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     {bullet}
                   </li>
@@ -184,7 +203,10 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
         {/* Trust bar */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {trustChips.map((chip, index) => (
-            <div key={index} className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium">
+            <div
+              key={index}
+              className="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+            >
               {chip}
             </div>
           ))}
@@ -193,10 +215,12 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
         {/* Pricing teaser */}
         <div className="text-center mb-8 text-sm text-gray-600">
           <p className="mb-1">
-            <span className="font-medium">Quick Fix:</span> once-off from R{pricing.quickFix}
+            <span className="font-medium">Quick Fix:</span> once-off from R
+            {pricing.quickFix}
           </p>
           <p>
-            <span className="font-medium">Care Plan:</span> monthly from R{pricing.carePlan} (updates, backups, monitoring)
+            <span className="font-medium">Care Plan:</span> monthly from R
+            {pricing.carePlan} (updates, backups, monitoring)
           </p>
         </div>
 
@@ -209,7 +233,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
             >
               Get a quick fix
             </button>
-            
+
             <button
               onClick={handleRequestAudit}
               className="w-full sm:w-auto text-blue-700 font-semibold hover:text-blue-800 transition-colors duration-200 hover:underline"
@@ -219,14 +243,21 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
           </div>
 
           <p className="text-sm text-gray-500">
-            Prefer WhatsApp? Message us at{' '}
-            <a href={`https://wa.me/${company.whatsapp.replace(/\s+/g, '')}`} className="text-blue-600 hover:underline">
+            Prefer WhatsApp? Message us at{" "}
+            <a
+              href={`https://wa.me/${company.whatsapp.replace(/\s+/g, "")}`}
+              className="text-blue-600 hover:underline"
+            >
               {company.whatsapp}
-            </a>
-            {' '}or email{' '}
-            <a href={`mailto:${company.email}`} className="text-blue-600 hover:underline">
+            </a>{" "}
+            or email{" "}
+            <a
+              href={`mailto:${company.email}`}
+              className="text-blue-600 hover:underline"
+            >
               {company.email}
-            </a>.
+            </a>
+            .
           </p>
         </div>
       </div>
