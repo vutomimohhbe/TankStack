@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+// changed code
 import SolutionsSection from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
-import "./App.css";
+
 import Portfolio from "./components/Portfolio";
 
 function App() {

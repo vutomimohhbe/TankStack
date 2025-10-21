@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Mail, Phone, MapPin, Calendar, Award, Code, Briefcase, GraduationCap, Star } from 'lucide-react';
+import { ArrowLeft, Mail, MapPin, Calendar, Award, Code, Briefcase, GraduationCap, Star } from 'lucide-react';
 
 interface VutomiPortfolioProps {
   onBack: () => void;
