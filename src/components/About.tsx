@@ -3,6 +3,7 @@ import VutomiPortfolio from "./VutomiPortfolio";
 import AthiPic from "../assets/AthiPic.jpg";
 import Vutomi_Pic from "../assets/Vutomi_Pic.jpg";
 import HloniPic from "../assets/HloniPic.jpg";
+import JazePic from "../assets/JazePic.jpg";
 
 const About: React.FC = () => {
   const [showVutomiPortfolio, setShowVutomiPortfolio] = React.useState(false);
@@ -29,6 +30,12 @@ const About: React.FC = () => {
       title: "Team Member",
       image: Vutomi_Pic,
       onClick: () => setShowVutomiPortfolio(true),
+    },
+    {
+      name: "Jaze Vywers",
+      title: "Business Management",
+      image: JazePic,
+      onClick: null,
     },
     // {
     //   name: "Cameron",
@@ -167,12 +174,20 @@ const About: React.FC = () => {
               }`}
               onClick={member.onClick || undefined}
             >
-              <div className="w-28 h-28 mx-auto mb-5 overflow-hidden rounded-full ring-2 ring-gray-100 ring-offset-4 ring-offset-white">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+              <div className="w-28 h-28 mx-auto mb-5 overflow-hidden rounded-full ring-2 ring-gray-100 ring-offset-4 ring-offset-white bg-gradient-to-br from-blue-100 to-teal-100">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-300 to-slate-400">
+                    <span className="text-2xl font-bold text-white">
+                      {member.name.split(" ").map((n) => n[0]).join("").toUpperCase()}
+                    </span>
+                  </div>
+                )}
               </div>
               <h3 className="font-display text-lg font-semibold text-gray-900 mb-1">
                 {member.name}

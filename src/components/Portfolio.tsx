@@ -2,9 +2,10 @@ import React, { useCallback, useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Supermarket from "../assets/SupermarketHome.jpg";
 import MedCare from "../assets/Med.jpg";
+import InmedScreenshot from "../assets/InmedScreenshot.jpg";
 
 interface Project {
-  image: string;
+  image: string | null;
   title: string;
   category: string;
   description: string;
@@ -27,6 +28,14 @@ const projects: Project[] = [
     description:
       "A clean, trustworthy healthcare website with appointment booking and service information, designed around patients.",
     tags: ["React", "Healthcare", "UI/UX"],
+  },
+  {
+    image: InmedScreenshot,
+    title: "INMED South Africa",
+    category: "Website Development",
+    description:
+      "Building pathways to wellbeing & self-reliance for every child & family. A professional nonprofit website highlighting programs, impact, and community engagement.",
+    tags: ["Website", "Nonprofit", "Community"],
   },
 ];
 
@@ -95,14 +104,24 @@ const Portfolio: React.FC = () => {
                   }`}
                   aria-hidden={current !== idx}
                 >
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className={`w-full h-full object-cover ${
-                      current === idx ? "animate-ken-burns" : ""
-                    }`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                  {p.image ? (
+                    <>
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className={`w-full h-full object-cover ${
+                          current === idx ? "animate-ken-burns" : ""
+                        }`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                    </>
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+                      <div className="text-center">
+                        <p className="text-slate-300 text-sm font-medium">Image coming soon</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
 

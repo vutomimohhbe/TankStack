@@ -67,7 +67,7 @@ const Chatbot: React.FC = () => {
     }
 
     if (message.includes("team") || message.includes("who are you")) {
-      return "TankStack is a small, focused team with Athi, Hloni, and Vutomi bringing together design, development, and delivery skills to solve real business challenges.";
+      return "TankStack is a team of four: Athi (design & frontend), Hloni (development), Vutomi (full-stack development), and Jaze (business management). Together we bring design, development, and delivery expertise to solve real business challenges.";
     }
 
     if (
@@ -88,6 +88,14 @@ const Chatbot: React.FC = () => {
 
     if (message.includes("thank") || message.includes("thanks")) {
       return "You're very welcome! Is there anything else you'd like to know about TankStack's solutions? I'm here to help!";
+    }
+
+    if (message.includes("portfolio") || message.includes("project") || message.includes("work")) {
+      return "We've worked on diverse projects including a Supermarket E-Commerce Platform, MedCare Health Platform, and INMED South Africa website. Each showcases our ability to build clean, user-focused solutions.";
+    }
+
+    if (message.includes("inmed")) {
+      return "INMED South Africa is a nonprofit building pathways to wellbeing and self-reliance for every child and family. We developed their professional website to highlight programs, impact, and community engagement.";
     }
 
     if (message.includes("bye") || message.includes("goodbye")) {
