@@ -67,7 +67,7 @@ const Chatbot: React.FC = () => {
     }
 
     if (message.includes("team") || message.includes("who are you")) {
-      return "TankStack has 4 expert team members: Athi, Hloni, Vutomi, and Cameron. Each brings unique skills to solve your tech challenges.";
+      return "TankStack is a small, focused team with Athi, Hloni, and Vutomi bringing together design, development, and delivery skills to solve real business challenges.";
     }
 
     if (
@@ -75,7 +75,7 @@ const Chatbot: React.FC = () => {
       message.includes("reach") ||
       message.includes("talk")
     ) {
-      return "You can reach us through our contact form below, email us at tankstackinfo@gmail.com, WhatsApp us at +27 78 349 8265, or call us at (078) 349-TANK. We'd love to discuss how we can help your business!";
+      return "You can reach us through our contact form below, email us at tankstackinfo@gmail.com, or call us at +27 79 225 9227. We'd love to discuss how we can help your business!";
     }
 
     if (

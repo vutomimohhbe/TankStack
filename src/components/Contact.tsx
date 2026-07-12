@@ -230,7 +230,7 @@ const Contact: React.FC = () => {
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">
                       Call Us
                     </h4>
-                    <p className="text-gray-600">(078) 349-TANK</p>
+                    <p className="text-gray-600">(+27) 79 225 9227-TANK</p>
                     <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM </p>
                   </div>
                 </div>

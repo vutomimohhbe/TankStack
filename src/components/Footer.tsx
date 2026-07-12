@@ -19,7 +19,9 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://github.com/"
+                target="_blank"
+                rel="noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 <svg
@@ -31,7 +33,9 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 <svg
@@ -43,7 +47,7 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="mailto:tankstackinfo@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
                 <svg
@@ -137,7 +141,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} TankStank. All rights reserved. Built with passion
+            © {currentYear} TankStack. All rights reserved. Built with passion
             for technology and innovation.
           </p>
         </div>

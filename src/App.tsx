@@ -2,21 +2,20 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-// changed code
 import SolutionsSection from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
-
 import Portfolio from "./components/Portfolio";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+    const sections = ["home", "about", "portfolio", "solutions", "contact"];
+
     const handleScroll = () => {
-      const sections = ["home", "about", "portfolio", "solutions", "contact"];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 140;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -33,7 +32,20 @@ function App() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.replace("#", "");
+      const element = document.getElementById(hash);
+      if (element) {
+        window.setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    };
+
+    handleScroll();
+    handleHashNavigation();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
