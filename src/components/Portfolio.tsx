@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Supermarket from "../assets/SupermarketHome.jpg";
 import MedCare from "../assets/Med.jpg";
-import InmedScreenshot from "../assets/InmedScreenshot.jpg";
+import InmedScreenshot from "../assets/Inmed_photo.png";
 
 interface Project {
   image: string | null;
