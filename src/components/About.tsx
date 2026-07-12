@@ -43,9 +43,13 @@ const About: React.FC = () => {
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <p className="text-sm font-semibold text-teal-600 uppercase tracking-[0.2em] mb-3">
+            Who We Are
+          </p>
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-4">
             About Us
           </h2>
+          <div className="w-16 h-px bg-gradient-to-r from-blue-600 to-teal-500 mx-auto mb-5" />
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             We help businesses grow through smart, scalable web solutions. From
             sleek websites to custom applications, we bring clarity, creativity,
@@ -58,12 +62,12 @@ const About: React.FC = () => {
 
         {/* Company Values */}
         <div className="mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-gray-900 mb-8 text-center">
             Our Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-8 bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
                 <svg
                   className="w-6 h-6 text-blue-700"
                   fill="none"
@@ -87,8 +91,8 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-8 bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
                 <svg
                   className="w-6 h-6 text-teal-700"
                   fill="none"
@@ -112,8 +116,8 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-8 bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
                 <svg
                   className="w-6 h-6 text-orange-700"
                   fill="none"
@@ -139,7 +143,7 @@ const About: React.FC = () => {
           </div>
         </div>
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-gray-900 mb-4">
             Meet the TankStack Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -154,31 +158,31 @@ const About: React.FC = () => {
         </div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:transform hover:-translate-y-1 text-center ${
+              className={`group bg-white p-8 rounded-2xl ring-1 ring-gray-900/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center ${
                 member.onClick ? "cursor-pointer" : ""
               }`}
               onClick={member.onClick || undefined}
             >
-              <div className="w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full">
+              <div className="w-28 h-28 mx-auto mb-5 overflow-hidden rounded-full ring-2 ring-gray-100 ring-offset-4 ring-offset-white">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-1">
+              <h3 className="font-display text-lg font-semibold text-gray-900 mb-1">
                 {member.name}
               </h3>
-              <p className="text-sm text-blue-600 font-medium">
+              <p className="text-sm text-teal-600 font-medium tracking-wide">
                 {member.title}
               </p>
               {member.onClick && (
-                <p className="text-xs text-gray-500 mt-2">
-                  Click to view portfolio
+                <p className="text-sm text-blue-600 font-medium mt-3 group-hover:underline underline-offset-4">
+                  View portfolio →
                 </p>
               )}
             </div>

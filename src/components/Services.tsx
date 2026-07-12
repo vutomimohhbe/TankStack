@@ -133,12 +133,13 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header block */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
-            What we do
+          <p className="text-sm font-semibold text-teal-600 uppercase tracking-[0.2em] mb-3">
+            What We Do
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Solutions we provide
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-4">
+            Solutions We Provide
           </h2>
+          <div className="w-16 h-px bg-gradient-to-r from-blue-600 to-teal-500 mx-auto mb-5" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A flexible, freelance team that jumps in to build, secure, and fix
             your tech — fast.
@@ -150,16 +151,16 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="group p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative"
+              className="group p-8 bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative"
             >
               {solution.badge && (
-                <div className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-medium">
+                <div className="absolute -top-2.5 right-4 bg-gradient-to-r from-blue-600 to-teal-500 text-white text-xs px-3 py-1 rounded-full font-medium shadow-md">
                   {solution.badge}
                 </div>
               )}
 
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-teal-500 rounded-xl flex items-center justify-center text-white mr-4 shadow-md shadow-blue-600/20 group-hover:scale-110 transition-transform duration-300">
                   {solution.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
@@ -229,7 +230,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
           <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center mb-4">
             <button
               onClick={handleQuickFix}
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-3.5 rounded-full font-semibold hover:from-blue-700 hover:to-teal-700 transform hover:scale-[1.03] transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Get a quick fix
             </button>

@@ -45,9 +45,13 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <p className="text-sm font-semibold text-teal-600 uppercase tracking-[0.2em] mb-3">
+            Contact
+          </p>
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-gray-900 mb-4">
             Let's Start a Conversation
           </h2>
+          <div className="w-16 h-px bg-gradient-to-r from-blue-600 to-teal-500 mx-auto mb-5" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ready to transform your business with technology? Get in touch with
             us today and let's discuss how we can solve your challenges.
@@ -56,8 +60,8 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="bg-white p-8 sm:p-10 rounded-2xl ring-1 ring-gray-900/5 shadow-sm">
+            <h3 className="font-display text-2xl font-semibold text-gray-900 mb-6">
               Send Us a Message
             </h3>
 
@@ -97,7 +101,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                   placeholder="Your full name"
                 />
               </div>
@@ -116,7 +120,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                   placeholder="your@email.com"
                 />
               </div>
@@ -135,7 +139,7 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-vertical"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-vertical"
                   placeholder="Tell us about your project and how we can help..."
                 />
               </div>
@@ -143,7 +147,7 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-teal-700 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
@@ -177,8 +181,8 @@ const Contact: React.FC = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="bg-white p-8 sm:p-10 rounded-2xl ring-1 ring-gray-900/5 shadow-sm">
+              <h3 className="font-display text-2xl font-semibold text-gray-900 mb-6">
                 Get in Touch
               </h3>
 
@@ -273,7 +277,7 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-white p-8 sm:p-10 rounded-2xl ring-1 ring-gray-900/5 shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Connect With Us
               </h3>

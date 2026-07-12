@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowLeft, Mail, MapPin, Calendar, Award, Code, Briefcase, GraduationCap, Star } from 'lucide-react';
+import VutomiPic from '../assets/Vutomi_Pic.jpg';
 
 interface VutomiPortfolioProps {
   onBack: () => void;
@@ -85,14 +86,18 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
             Back to Team
           </button>
           
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 to-teal-600 px-8 py-12 text-white">
+          <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-lg overflow-hidden">
+            <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-teal-900 px-8 py-12 text-white">
               <div className="flex flex-col md:flex-row items-center md:items-start">
-                <div className="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-6 md:mb-0 md:mr-8">
-                  <span className="text-4xl font-bold">VM</span>
+                <div className="w-32 h-32 rounded-full overflow-hidden ring-2 ring-white/40 ring-offset-4 ring-offset-transparent mb-6 md:mb-0 md:mr-8 flex-shrink-0">
+                  <img
+                    src={VutomiPic}
+                    alt="Vutomi Mohube"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="text-center md:text-left">
-                  <h1 className="text-4xl font-bold mb-2">Vutomi Mohube</h1>
+                  <h1 className="font-display text-4xl font-semibold mb-2">Vutomi Mohube</h1>
                   <p className="text-xl text-blue-100 mb-4">Software Engineer</p>
                   <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
                     <div className="flex items-center">
@@ -114,8 +119,8 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
           {/* Left Column */}
           <div className="lg:col-span-1 space-y-6">
             {/* Skills */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-gray-900 mb-6 flex items-center">
                 <Code className="w-6 h-6 mr-3 text-blue-600" />
                 Technical Skills
               </h2>
@@ -138,8 +143,8 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
             </div>
 
             {/* Education */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-gray-900 mb-6 flex items-center">
                 <GraduationCap className="w-6 h-6 mr-3 text-blue-600" />
                 Education
               </h2>
@@ -156,8 +161,8 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
             </div>
 
             {/* Certifications */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-gray-900 mb-6 flex items-center">
                 <Award className="w-6 h-6 mr-3 text-blue-600" />
                 Certifications
               </h2>
@@ -181,8 +186,8 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
           {/* Right Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* About */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">About Me</h2>
+            <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-gray-900 mb-4">About Me</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 I am a passionate Software Engineer with expertise in full-stack web development, 
                 specializing in modern JavaScript frameworks and cloud technologies. I enjoy solving 
@@ -196,8 +201,8 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
             </div>
 
             {/* Experience */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-gray-900 mb-6 flex items-center">
                 <Briefcase className="w-6 h-6 mr-3 text-blue-600" />
                 Professional Experience
               </h2>
@@ -228,11 +233,11 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
             </div>
 
             {/* Projects */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Projects</h2>
+            <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-gray-900 mb-6">Featured Projects</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
+                  <div key={index} className="border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{project.title}</h3>
                     <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
                     
@@ -267,8 +272,8 @@ const VutomiPortfolio: React.FC<VutomiPortfolioProps> = ({ onBack }) => {
             </div>
 
             {/* Contact */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+            <div className="bg-white rounded-2xl ring-1 ring-gray-900/5 shadow-sm p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-semibold text-gray-900 mb-6">Get In Touch</h2>
               <p className="text-gray-600 mb-6">
                 Interested in working together or have a question? Feel free to reach out!
               </p>

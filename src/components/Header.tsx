@@ -37,7 +37,9 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg backdrop-blur-sm" : "bg-transparent"
+        isScrolled
+          ? "bg-white/85 backdrop-blur-md shadow-sm border-b border-gray-900/5"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,26 +50,41 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
               onClick={() => scrollToSection("home")}
               className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200"
             >
-              <img
-                src={logo}
-                alt="TankStack Logo pic"
-                className="h-25 w-auto rounded-full" // Add rounded-full for a circular logo
-              />
+              <span className="flex items-center gap-3">
+                <img
+                  src={logo}
+                  alt="TankStack logo"
+                  className="h-11 w-11 object-cover rounded-full ring-2 ring-white/30 shadow-md"
+                />
+                <span
+                  className={`font-display text-xl font-semibold tracking-tight ${
+                    isScrolled ? "text-gray-900" : "text-white"
+                  }`}
+                >
+                  TankStack
+                </span>
+              </span>
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105 ${
+                className={`relative py-2 text-sm font-medium tracking-wide transition-colors duration-200 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:bg-gradient-to-r after:from-blue-600 after:to-teal-500 after:transition-all after:duration-300 ${
                   activeSection === item.id
-                    ? "text-blue-700 bg-blue-50"
+                    ? "after:w-full"
+                    : "after:w-0 hover:after:w-full"
+                } ${
+                  activeSection === item.id
+                    ? isScrolled
+                      ? "text-blue-700"
+                      : "text-white"
                     : isScrolled
-                    ? "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
-                    : "text-white hover:text-blue-200"
+                    ? "text-gray-600 hover:text-gray-900"
+                    : "text-white/80 hover:text-white"
                 }`}
               >
                 {item.label}

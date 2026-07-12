@@ -1,111 +1,183 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Supermarket from "../assets/SupermarketHome.jpg";
 import MedCare from "../assets/Med.jpg";
 
-const projects = [
+interface Project {
+  image: string;
+  title: string;
+  category: string;
+  description: string;
+  tags: string[];
+}
+
+const projects: Project[] = [
   {
     image: Supermarket,
+    title: "Supermarket E-Commerce Platform",
+    category: "Web Development",
+    description:
+      "A modern online grocery storefront with intuitive browsing, cart, and checkout — built for speed and conversions.",
+    tags: ["React", "E-Commerce", "Responsive"],
   },
   {
     image: MedCare,
+    title: "MedCare Health Platform",
+    category: "Web Development",
+    description:
+      "A clean, trustworthy healthcare website with appointment booking and service information, designed around patients.",
+    tags: ["React", "Healthcare", "UI/UX"],
   },
-  //   {
-  //     image:
-  //       "https://images.pexels.com/photos/256219/pexels-photo-256219.jpeg?auto=compress&w=400&h=250&fit=crop",
-  //   },
-  //   {
-  //     image:
-  //       "https://images.pexels.com/photos/35550/pexels-photo.jpg?auto=compress&w=400&h=250&fit=crop",
-  //   },
 ];
+
+const AUTOPLAY_MS = 7000;
 
 const Portfolio: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-play slideshow every 4 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [current]);
+  const nextProject = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % projects.length);
+  }, []);
 
   const prevProject = () => {
-    setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+    setCurrent((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const nextProject = () => {
-    setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-  };
+  // Auto-play, paused while hovering
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(nextProject, AUTOPLAY_MS);
+    return () => clearInterval(timer);
+  }, [isPaused, nextProject]);
+
+  const project = projects[current];
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Portfolio
+    <section
+      id="portfolio"
+      className="relative py-24 sm:py-28 bg-slate-950 overflow-hidden"
+    >
+      {/* Ambient glows */}
+      <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-blue-700/20 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -right-24 w-[30rem] h-[30rem] bg-teal-600/15 rounded-full blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-teal-400 uppercase tracking-[0.25em] mb-3">
+            Our Work
+          </p>
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-white mb-4">
+            Selected Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Slideshow of our recent projects.
+          <div className="w-16 h-px bg-gradient-to-r from-sky-400 to-teal-400 mx-auto mb-5" />
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            A glimpse of what we build — crafted with care, designed to
+            perform.
           </p>
         </div>
-        <div className="relative flex flex-col items-center">
-          <button
-            onClick={prevProject}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2"
-            aria-label="Previous"
-          >
-            &#8592;
-          </button>
-          <div className="w-full max-w-5xl bg-gray-50 rounded-lg shadow-md overflow-hidden flex flex-col items-center">
-            <img
-              src={projects[current].image}
-              alt={`Project ${current + 1}`}
-              className="w-full h-[32rem] object-cover" // Larger height and full width
-            />
-            {/* <div className="p-8 text-center">
-              <p className="text-xl text-gray-700 mb-4">
-                {projects[current].description}
-              </p>
-            </div> */}
+
+        {/* Showcase */}
+        <div
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Image */}
+          <div className="lg:col-span-7">
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-blue-950/50">
+              {projects.map((p, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    current === idx ? "opacity-100 z-10" : "opacity-0 z-0"
+                  }`}
+                  aria-hidden={current !== idx}
+                >
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className={`w-full h-full object-cover ${
+                      current === idx ? "animate-ken-burns" : ""
+                    }`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                </div>
+              ))}
+
+              {/* Counter */}
+              <div className="absolute top-5 right-6 z-20 text-white/90 text-sm font-medium tracking-widest">
+                {String(current + 1).padStart(2, "0")}
+                <span className="text-white/40">
+                  {" "}
+                  / {String(projects.length).padStart(2, "0")}
+                </span>
+              </div>
+            </div>
           </div>
-          <button
-            onClick={nextProject}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2"
-            aria-label="Next"
-          >
-            &#8594;
-          </button>
-        </div>
-        <div className="flex justify-center mt-6 space-x-2">
-          {projects.map((_, idx) => (
-            <button
-              key={idx}
-              className={`w-3 h-3 rounded-full border-2 ${
-                current === idx
-                  ? "bg-blue-600 border-blue-600"
-                  : "bg-gray-300 border-gray-300"
-              }`}
-              onClick={() => setCurrent(idx)}
-              aria-label={`Go to project ${idx + 1}`}
-            />
-          ))}
-        </div>
-        <div className="flex justify-center mt-4 space-x-4">
-          <button
-            onClick={prevProject}
-            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full"
-            aria-label="Previous"
-          >
-            Previous
-          </button>
-          <button
-            onClick={nextProject}
-            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full"
-            aria-label="Next"
-          >
-            Next
-          </button>
+
+          {/* Caption */}
+          <div className="lg:col-span-5">
+            <div key={current} className="animate-fade-in-up">
+              <span className="font-display text-6xl sm:text-7xl font-semibold text-white/10 leading-none select-none">
+                {String(current + 1).padStart(2, "0")}
+              </span>
+              <p className="text-xs font-semibold text-teal-400 uppercase tracking-[0.25em] mt-4 mb-3">
+                {project.category}
+              </p>
+              <h3 className="font-display text-3xl sm:text-4xl font-semibold text-white mb-4 leading-tight">
+                {project.title}
+              </h3>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-10">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3.5 py-1.5 text-xs font-medium text-slate-200 rounded-full ring-1 ring-white/15 bg-white/5"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={prevProject}
+                aria-label="Previous project"
+                className="w-12 h-12 rounded-full ring-1 ring-white/20 text-white flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all duration-300"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={nextProject}
+                aria-label="Next project"
+                className="w-12 h-12 rounded-full ring-1 ring-white/20 text-white flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all duration-300"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+
+              {/* Indicators */}
+              <div className="flex items-center gap-2.5 ml-4">
+                {projects.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrent(idx)}
+                    aria-label={`Go to project ${idx + 1}`}
+                    className={`h-1 rounded-full transition-all duration-500 ${
+                      current === idx
+                        ? "w-10 bg-gradient-to-r from-sky-400 to-teal-400"
+                        : "w-4 bg-white/20 hover:bg-white/40"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
