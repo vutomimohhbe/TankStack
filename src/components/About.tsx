@@ -165,7 +165,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <div
               key={index}
@@ -182,7 +182,7 @@ const About: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-300 to-slate-400">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-teal-500">
                     <span className="text-2xl font-bold text-white">
                       {member.name.split(" ").map((n) => n[0]).join("").toUpperCase()}
                     </span>
