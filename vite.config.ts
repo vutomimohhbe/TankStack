@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// GitHub Pages deploys from the repository subpath.
+// Custom domain (tankstacksolution.co.za) serves from the root path.
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/TankStack/",
+  base: "/",
   build: {
     outDir: "dist",
     assetsDir: "assets",
